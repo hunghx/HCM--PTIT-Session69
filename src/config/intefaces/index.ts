@@ -1,0 +1,1 @@
+// cấu hình các type của TypeScript
