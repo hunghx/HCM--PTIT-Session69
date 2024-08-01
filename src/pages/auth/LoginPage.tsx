@@ -15,6 +15,7 @@ const dispatch = useDispatch();
 // lấy userLogin
 const userLogin = useSelector((state : RootState)=>state.user.userLogin)
 
+  const message = useSelector((state : RootState)=>state.user.error)
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -82,6 +83,11 @@ const userLogin = useSelector((state : RootState)=>state.user.userLogin)
           Submit
         </Button>
       </Form>
+      {
+        message && <div className="text-danger">{message}</div>  // hiển thị thông báo l��i nếu có
+
+    
+      }
     </div>
   );
 }

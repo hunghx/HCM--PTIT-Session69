@@ -40,6 +40,12 @@ const userSlice = createSlice({
            localStorage.setItem('access_token',action.payload.accessToken);
            state.userLogin = action.payload.user
         })
+        .addCase(loginUser.rejected,(state,action)=>{
+            // đăng nhập thành công 
+            if(action.payload.status === 400) {
+                state.error = "ten dăng nhập haowjc mật khẩu ko đúng"
+            }
+         })
     }
 })
 
