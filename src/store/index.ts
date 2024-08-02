@@ -1,12 +1,14 @@
 // cấu hình store
 
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./slices/usersSlice";
+import { reducer as user } from "./slices/usersSlice";
+import { reducer as product } from "./slices/productSlice";
 
 
 export const store = configureStore({
     reducer:{
-        user : reducer
+        user : user,
+        product : product
     }
 })
 
